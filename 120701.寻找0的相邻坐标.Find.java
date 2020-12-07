@@ -16,7 +16,7 @@ public class find {
 		for (int row = 0; row < array2d.length; row++) {
 			for (int colunm = 0; colunm < array2d[0].length; colunm++) {
 				if (array2d[row][colunm]==0) {
-					System.out.println("0的位置是："+"R_zero("+row+","+colunm+")");
+					System.out.println("0的位置是："+"R_zero("+colunm+","+row+")");
 				}
 			}
 		}
@@ -27,9 +27,9 @@ public class find {
 		for (int row = 0; row < array2d.length; row++) {
 			for (int colunm = 0; colunm < array2d[0].length; colunm++) {
 				if (array2d[row][colunm]==0) {
-					x=row;
-					y=colunm;
-					System.out.println("0的左边数组位置是："+"R_left("+(x)+","+(y-1)+")");
+					x=colunm;
+					y=row;
+					System.out.println("0的左边数组位置是："+"R_left("+(x-1)+","+(y)+")");
 				}
 			}
 		}
@@ -40,9 +40,9 @@ public class find {
 		for (int row = 0; row < array2d.length; row++) {
 			for (int colunm = 0; colunm < array2d[0].length; colunm++) {
 				if (array2d[row][colunm]==0) {
-					x=row;
-					y=colunm;
-					System.out.println("0的左边数组位置是："+"R_right("+(x)+","+(y+1)+")");
+					x=colunm;
+					y=row;
+					System.out.println("0的右边数组位置是："+"R_right("+(x+1)+","+(y)+")");
 				}
 			}
 		}
@@ -53,9 +53,9 @@ public class find {
 		for (int row = 0; row < array2d.length; row++) {
 			for (int colunm = 0; colunm < array2d[0].length; colunm++) {
 				if (array2d[row][colunm]==0) {
-					x=row;
-					y=colunm;
-					System.out.println("0上面数组位置是："+"R_up("+(x-1)+","+(y)+")");
+					x=colunm;
+					y=row;
+					System.out.println("0上面数组位置是："+"R_up("+(x)+","+(y-1)+")");
 				}
 			}
 		}
@@ -66,9 +66,9 @@ public class find {
 		for (int row = 0; row < array2d.length; row++) {
 			for (int colunm = 0; colunm < array2d[0].length; colunm++) {
 				if (array2d[row][colunm]==0) {
-					x=row;
-					y=colunm;
-					System.out.println("0下面数组位置是："+"R_down("+(x+1)+","+(y)+")");
+					x=colunm;
+					y=row;
+					System.out.println("0下面数组位置是："+"R_down("+(x)+","+(y+1)+")");
 				}
 			}
 		}

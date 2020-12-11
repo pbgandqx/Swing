@@ -15,6 +15,7 @@ public class App {
             {0,11,10}
     };
     int cell=128;
+    int score=0;
     List<JLabel> label_list=new ArrayList<>();
     //构造方法App()
     public App() {
@@ -26,16 +27,21 @@ public class App {
 //                以下三行代码，表示有图小图相对于窗体向下移动了三步
                 if (e.getKeyCode()==KeyEvent.VK_UP){
                     new Zero().goDown(array2d);
-                }
-                if (e.getKeyCode()==KeyEvent.VK_DOWN){
+                    score++;
+                }if (e.getKeyCode()==KeyEvent.VK_DOWN){
                     new Zero().goUp(array2d);
+                    score++;
                 }
                 if (e.getKeyCode()==KeyEvent.VK_LEFT){
                     new Zero().goRight(array2d);
+                    score++;
                 }
                 if (e.getKeyCode()==KeyEvent.VK_RIGHT){
                     new Zero().goLeft(array2d);
+                    score++;
                 }
+
+
                 showMyGame();
             }
         });
@@ -44,6 +50,9 @@ public class App {
 
     //    为了使程序结构清晰，设置一个方法来显示所有组件showMyGame()
     void showMyGame(){
+        label_txt.setText("总步数："+score);
+        label_txt.setBounds(0,0,200,30);
+        myPanel.add(label_txt);
         //移动矩阵
         for (int row = 0; row < array2d.length; row++) {
             for (int column = 0; column < array2d[0].length; column++) {
@@ -59,15 +68,13 @@ public class App {
 
     //显示窗体方法go()
     void go(){
+
+
         //网格
         java.net.URL imgURL999 = App.class.getResource("img/foreground.png");
         label_foreground.setIcon(new ImageIcon(imgURL999));
         label_foreground.setBounds(0,0,384,512);
         myPanel.add(label_foreground);
-
-        label_txt.setText("这是一个Label标签。");
-        label_txt.setBounds(0,0,200,30);
-        myPanel.add(label_txt);
 
         myPanel.setLayout(null);
         JFrame frame = new JFrame("一个小程序");
